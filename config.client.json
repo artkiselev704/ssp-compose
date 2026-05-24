@@ -1,0 +1,9 @@
+{
+    "host": "0.0.0.0:2080",
+    "servers": [
+        "mirror:443"
+    ],
+    "retries": 5,
+    "timeout": 5,
+    "log_level": -4
+}

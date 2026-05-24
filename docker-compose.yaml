@@ -1,0 +1,28 @@
+name: ssp
+
+services:
+    client:
+        image: ssp-client
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        ports:
+          - "2080:2080"
+        volumes:
+          - ./config.client.json:/app/config.json
+
+    mirror:
+        image: ssp-mirror
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.mirror.json:/app/config.json
+          
+    server:
+        image: ssp-server
+        restart: always
+        environment:
+          - TZ=Europe/Moscow
+        volumes:
+          - ./config.server.json:/app/config.json
